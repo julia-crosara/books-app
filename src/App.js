@@ -1,20 +1,25 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ListBooks from './components/ListBooks.js'
-import Book from './components/Book.js'
-import SearchBooks from './components/SearchBooks.js'
 import * as BooksAPI from './utils/BooksAPI.js'
-import { Route } from 'react-router-dom'
 import './App.css'
 
 class BooksApp extends React.Component {
   state = {
-    showSearchPage: false
+    books: []
+  }
+
+  componentDidMount() {
+    BooksAPI.getAll().then((books) => {
+        this.setState(() => ({books}))
+      })
   }
 
   render() {
     return (
       <div className="app">
-        <ListBooks />
+        <ListBooks 
+          books={this.state.books}
+        />
       </div>
     )
   }
