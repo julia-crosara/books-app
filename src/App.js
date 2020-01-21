@@ -1,6 +1,7 @@
 import React from 'react'
-import ListBooks from './components/ListBooks.js'
-import * as BooksAPI from './utils/BooksAPI.js'
+import ListBooks from './components/ListBooks'
+// import SearchBooks from './components/SearchBooks'
+import * as BooksAPI from './utils/BooksAPI'
 import './App.css'
 
 class BooksApp extends React.Component {
@@ -10,16 +11,16 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-        this.setState(() => ({books}))
-      })
+      this.setState(() => ({ books }))
+    })
   }
 
   render() {
     return (
       <div className="app">
-        <ListBooks 
+        <ListBooks
           books={this.state.books}
-        />
+         />
       </div>
     )
   }
