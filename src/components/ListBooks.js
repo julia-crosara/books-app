@@ -1,12 +1,13 @@
+  
 import React, { Component } from 'react'
 import Book from './Book.js'
 import PropTypes from 'prop-types'
 
 class ListBooks extends Component {
   static propTypes = {
-    books: PropTypes.array.isRequired,
+    book: PropTypes.object.isRequired,
+    books: PropTypes.array.isRequired
   }
-
 
   render() {
     console.log(this.props.books)
@@ -21,10 +22,11 @@ class ListBooks extends Component {
               <h2 className="bookshelf-title">Currently Reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  {this.props.books
+                {
+                  this.props.books
                     .filter(book => book.shelf === 'currentlyReading')
                     .map(book => (
-                      <li key={book.id}>
+                      <li key={book.id} >
                         <Book />
                       </li>
                     ))
@@ -36,10 +38,11 @@ class ListBooks extends Component {
               <h2 className="bookshelf-title">Want to Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  {this.props.books
+                {
+                  this.props.books
                     .filter(book => book.shelf === 'wantToRead')
                     .map(book => (
-                      <li key={book.id}>
+                      <li key={book.id} >
                         <Book />
                       </li>
                     ))
@@ -51,10 +54,11 @@ class ListBooks extends Component {
               <h2 className="bookshelf-title">Read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                  {this.props.books
+                {
+                  this.props.books
                     .filter(book => book.shelf === 'read')
                     .map(book => (
-                      <li key={book.id}>
+                      <li key={book.id} >
                         <Book />
                       </li>
                     ))
