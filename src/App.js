@@ -9,17 +9,26 @@ class BooksApp extends React.Component {
     books: []
   }
 
+  //add array of books to the state
   componentDidMount() {
     BooksAPI.getAll().then((books) => {
-      this.setState(() => ({ books }))
+        this.setState({ books })
     })
-  }
+}
+
+  moveShelf = (book, shelf) => {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+  })
+    BooksAPI.update(book, shelf)
+}
 
   render() {
     return (
       <div className="app">
         <ListBooks
           books={this.state.books}
+          moveShelf={this.moveShelf}
          />
       </div>
     )
