@@ -10,18 +10,26 @@ body, .app {
   background: white;
 }
 
+h2 {
+  color: #6c7b95;
+  font-family: 'roboto', sans-serif;
+  font-size: 1.75rem;
+}
+
 /* main page */
 
 .list-books-title {
   padding: 10px 0;
-  background: #2e7c31;
+  background: #347474;
   text-align: center;
 }
 
 .list-books-title h1 {
-  font-weight: 400;
+  font-family: 'roboto', sans-serif;
+  font-weight: 700;
   margin: 0;
   color: white;
+  font-size: 3rem;
 }
 
 .list-books-content {
@@ -40,7 +48,7 @@ body, .app {
 }
 
 .bookshelf-title {
-  border-bottom: 1px solid #dedede;
+  border-bottom: 4px dotted #dedede;
 }
 
 .bookshelf-books {
@@ -58,7 +66,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #63b7af;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -69,7 +77,8 @@ body, .app {
 }
 
 .open-search button:hover {
-  background-color: rgb(0, 102, 0);
+  background-color: #347474;
+  /* background-color: rgb(0, 102, 0); */
 }
 
 
@@ -169,7 +178,7 @@ button:active {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #63b7af;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
