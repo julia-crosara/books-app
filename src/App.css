@@ -12,8 +12,8 @@ body, .app {
 
 h2 {
   color: #85ada6;
-  font-family: 'Radley', serif;
-  font-size: 3rem;
+  font-family: 'Merriweather Sans', sans-serif;
+  font-size: 2rem;
 }
 
 /* main page */
@@ -25,7 +25,7 @@ h2 {
 }
 
 .list-books-title h1 {
-  font-family: 'radley', sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
   margin: 0;
   color: #fff;
   font-size: 4rem;
@@ -37,12 +37,12 @@ h2 {
 }
 
 .bookshelf {
-  padding: 0 10px 20px;
+  padding: 0 20px 40px;
 }
 
 @media (min-width: 600px) {
   .bookshelf {
-    padding: 0 20px 40px;
+    padding: 20px 40px;
   }
 }
 
