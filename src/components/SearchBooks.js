@@ -5,16 +5,19 @@ import * as BooksAPI from '../utils/BooksAPI'
 import { Link } from 'react-router-dom'
 
 class SearchBooks extends Component {
+
   state = {
     query: '',
     searchedBooks: []
   }
+
   updateQuery = (query) => {
     this.setState({
       query: query
     })
     this.updateSearchedBooks(query)
   }
+
   updateSearchedBooks = (query) => {
     if (query) {
       BooksAPI.search(query).then((searchedBooks) => {
@@ -28,6 +31,7 @@ class SearchBooks extends Component {
       this.setState({ searchedBooks: [] })
     }
   }
+
   render() {
     return (
       <div className="search-books">
@@ -45,8 +49,10 @@ class SearchBooks extends Component {
               value={this.state.query}
               onChange={(event) => this.updateQuery(event.target.value)}
             />
+
           </div>
         </div>
+
         <div className="search-books-results">
           <ol className="books-grid">
             {
@@ -63,6 +69,7 @@ class SearchBooks extends Component {
             }
           </ol>
         </div>
+
       </div>
     )
   }

@@ -12,12 +12,12 @@ class BooksApp extends React.Component {
 
   componentDidMount() {
     BooksAPI.getAll()
-    .then((books) => {
-      this.setState(() => ({
-        books
-      }))
-    })
-}
+      .then((books) => {
+        this.setState(() => ({
+          books
+        }))
+      })
+  }
 
   moveShelf = (book, shelf) => {
     BooksAPI.update({id: book.id}, shelf)
