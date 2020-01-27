@@ -1,14 +1,29 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 class Book extends Component {
+  static propTypes = {
+      book: PropTypes.object.isRequired,
+      moveShelf: PropTypes.func.isRequired
+  } 
+  
   render() {
+    let coverImage = this.props.book.imageLinks ?
+    this.props.book.imageLinks.thumbnail :
+    '';
+
     return(
       <div className="book">
         <div className="book-top">
-          <div className="book-cover" style={{ width: 128, height: 193, backgroundImage: `url("${this.props.book.imageLinks.thumbnail}")` }}></div>
+          <div className="book-cover" style={{ width: 128, height: 193, 
+            backgroundImage: `url("${coverImage}")`}}>
+          </div>
           <div className="book-shelf-changer">
-            <select>
-              <option value="move" disabled>Move to...</option>
+          <select 
+            onChange={(event) => this.props.moveShelf(
+              this.props.book, event.target.value
+            )}> 
+              <option value="move" selected disabled="true">Move to...</option>
               <option value="currentlyReading">Currently Reading</option>
               <option value="wantToRead">Want to Read</option>
               <option value="read">Read</option>

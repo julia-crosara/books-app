@@ -1,7 +1,7 @@
-  
 import React, { Component } from 'react'
 import Book from './Book.js'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 class ListBooks extends Component {
   static propTypes = {
@@ -18,25 +18,25 @@ class ListBooks extends Component {
         <div className="list-books-content">
           <div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Currently Reading</h2>
+              <h2 className="bookshelf-title">currently reading</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
-                {
-                  this.props.books
-                    .filter(book => book.shelf === 'currentlyReading')
-                    .map(book => (
-                      <li key={book.id} >
-                        <Book 
-                          book={book}
-                        />
-                      </li>
-                    ))
-                  }
+                  {this.props.books
+                      .filter(book => book.shelf === 'currentlyReading')
+                      .map(book => (
+                        <li key={book.id} >
+                          <Book 
+                            book={book}
+                            moveShelf={this.props.moveShelf}
+                          />
+                        </li>
+                      ))
+                    }
                 </ol>
               </div>
             </div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Want to Read</h2>
+              <h2 className="bookshelf-title">want to read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                 {
@@ -45,7 +45,9 @@ class ListBooks extends Component {
                     .map(book => (
                       <li key={book.id} >
                         <Book 
-                            book={book}
+                          book={book}
+                          moveShelf={this.props.moveShelf}
+                          
                         />
                       </li>
                     ))
@@ -54,7 +56,7 @@ class ListBooks extends Component {
               </div>
             </div>
             <div className="bookshelf">
-              <h2 className="bookshelf-title">Read</h2>
+              <h2 className="bookshelf-title">read</h2>
               <div className="bookshelf-books">
                 <ol className="books-grid">
                 {
@@ -64,6 +66,7 @@ class ListBooks extends Component {
                       <li key={book.id} >
                         <Book 
                           book={book}
+                          moveShelf={this.props.moveShelf}
                         />
                       </li>
                     ))
@@ -74,7 +77,9 @@ class ListBooks extends Component {
           </div>
         </div>
         <div className="open-search">
-          <button onClick={() => this.setState({ showSearchPage: true })}>Add a book</button>
+          <Link 
+            to="/search"
+          ><button>Add a book</button></Link>
         </div>
     </div>
     )
