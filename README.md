@@ -2,8 +2,6 @@
 
 First project for Udacity's React Nanodegree program. This bookshelf app allows you to search for, select, and place books on three different shelves: currently reading, want to read, or read. 
 
-Live version: https://mybooks-app.herokuapp.com/
-
 ## How to Use the App
 * The main page displays three bookshelves which separate books into categories: currently reading, want to read, and read. 
 * To change a book's category or remove it from a shelf, click the round button at the lower right corner of the book's cover.
