@@ -1,5 +1,7 @@
 # MyBooks App
 
+![Alt text](/relative/path/to/img.jpg?raw=true "Screenshot of app")
+
 First project for Udacity's React Nanodegree program. This bookshelf app allows you to search for, select, and place books on three different shelves: currently reading, want to read, or read. 
 
 ## How to Use the App
